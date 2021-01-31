@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+<body>
+ <div class="login">
+	<h1>Diabetic Readmission</h1>
+   <h2> 1 for Readmission & 0 for No Admission required</h2>
+     {{prediction_text}}
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+      <input type="text" name="race" placeholder="race" required="required" /><br>
+    	<input type="text" name="gender" placeholder="gender" required="required" /><br>
+        <input type="text" name="age" placeholder="age" required="required" /><br>
+        <input type="text" name="admission_type_id" placeholder="admission_type_id" required="required" /><br>
+        <input type="text" name="discharge_disposition_id" placeholder="discharge_disposition_id" required="required" /><br>
+        <input type="text" name="admission_source_id" placeholder="admission_source_id" required="required" /><br>
+      	<input type="text" name="time_in_hospital" placeholder="time_in_hospital" required="required" /><br>
+          <input type="text" name="num_lab_procedures" placeholder="num_lab_procedures" required="required" /><br>
+          <input type="text" name="num_procedures" placeholder="num_procedures" required="required" /><br>
+          <input type="text" name="num_medications" placeholder="num_medications" required="required" /><br>
+          <input type="text" name="number_inpatient" placeholder="number_inpatient" required="required" /><br>
+        	<input type="text" name="number_diagnoses" placeholder="number_diagnoses" required="required" /><br>
+            <input type="text" name="max_glu_serum" placeholder="max_glu_serum" required="required" /><br>
+            <input type="text" name="A1Cresult" placeholder="A1Cresult" required="required" /><br>
+            <input type="text" name="metformin" placeholder="metformin" required="required" /><br>
+            <input type="text" name="repaglinide" placeholder="repaglinide" required="required" /><br>
+          	<input type="text" name="nateglinide" placeholder="nateglinide" required="required" /><br>
+              <input type="text" name="glimepiride" placeholder="glimepiride" required="required" /><br>
+              <input type="text" name="glipizide" placeholder="glipizide" required="required" /><br>
+              <input type="text" name="glyburide" placeholder="glyburide" required="required" /><br>
+              <input type="text" name="pioglitazone" placeholder="pioglitazone" required="required" /><br>
+            	<input type="text" name="rosiglitazone" placeholder="rosiglitazone" required="required" /><br>
+                <input type="text" name="acarbose" placeholder="acarbose" required="required" /><br>
+                <input type="text" name="insulin" placeholder="insulin" required="required" /><br>
+                <input type="text" name="glyburide-metformin" placeholder="glyburide-metformin" required="required" /><br>
+                <input type="text" name="change" placeholder="change" required="required" /><br>
+              	<input type="text" name="diabetesMed" placeholder="diabetesMed" required="required" /><br>
+
+
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+   <br>
+   <br>
+
+
+ </div>
+ 
+
+</body>
+</html>
