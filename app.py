@@ -7,8 +7,7 @@ import joblib
 
 
 app = Flask(__name__)
-m1 = open('term3_model.pkl','rb')
-model = joblib.load(m1)
+model = pickle.load(('term3_model.pkl','rb'))
 
 
 @app.route('/')
